@@ -91,8 +91,8 @@ app.get("/sayHello", (req, res) => {
 app.post ("/articles", async (req, res) => {
   
   const newArcicle = new Article({
-    title: "My second article",
-    body: "This is the body of my second article",
+    title: "My third article",
+    body: "This is the body of my third  article",
     numberOfLikes: 20,
   });
   await newArcicle.save();
