@@ -3,32 +3,23 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-/*app.get("/", (req, res) => {
-	res.send("hello in node js project");
-});*/
-
-
 const Article = require("./models/Article");
 
 mongoose
-  .connect(
-    "mongodb+srv://benznaila2005:8WDugS40oyG6UdNZ@cluster0.2dohifc.mongodb.net/mydb?retryWrites=true&w=majority&appName=Cluster0",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
-  .then(() => {
-    console.log("✅ connected successfully to MongoDB");
-  })
-  .catch((error) => {
-    console.error("❌ error with connecting with the DB ", error);
-  });
+	.connect(
+		"mongodb+srv://benznaila2005:8WDugS40oyG6UdNZ@cluster0.2dohifc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+	)
+	.then(() => {
+		console.log("connected successfully");
+	})
+	.catch((error) => {
+		console.log("error with connecting with the DB ", error);
+	});
 
 app.use(express.json());
 
 app.get("/", (req, res) => {
-	res.send("cbn");
+	res.send("hello in node js project");
 });
 
 /*
@@ -91,8 +82,8 @@ app.get("/sayHello", (req, res) => {
 app.post ("/articles", async (req, res) => {
   
   const newArcicle = new Article({
-    title: "My third article",
-    body: "This is the body of my third  article",
+    title: "My second article",
+    body: "This is the body of my second article",
     numberOfLikes: 20,
   });
   await newArcicle.save();
