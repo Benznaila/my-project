@@ -6,23 +6,27 @@ const app = express();
 const Article = require("./models/Article");
 
 mongoose
-	.connect(
-		"mongodb+srv://benznaila2005:8WDugS40oyG6UdNZ@cluster0.2dohifc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-	)
-	.then(() => {
-		console.log("connected successfully");
-	})
-	.catch((error) => {
-		console.log("error with connecting with the DB ", error);
-	});
+  .connect(
+    "mongodb+srv://benznaila2005:8WDugS40oyG6UdNZ@cluster0.2dohifc.mongodb.net/mydb?retryWrites=true&w=majority&appName=Cluster0",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => {
+    console.log("✅ connected successfully to MongoDB");
+  })
+  .catch((error) => {
+    console.error("❌ error with connecting with the DB ", error);
+  });
 
 app.use(express.json());
 
-/*app.get("/", (req, res) => {
+app.get("/", (req, res) => {
 	res.send("hello in node js project");
 });
 
-
+/*
 app.get("/hello", (req, res) => {
 	//res.send("hello");
   //res.send(<h1>hello</h1>);
