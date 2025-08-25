@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-app.get("/", (req, res) => {
+/*app.get("/", (req, res) => {
 	res.send("hello in node js project");
-});
+});*/
 
 
 const Article = require("./models/Article");
@@ -28,7 +28,7 @@ mongoose
 app.use(express.json());
 
 app.get("/", (req, res) => {
-	res.send("hello in node js project");
+	res.send("cbn");
 });
 
 /*
